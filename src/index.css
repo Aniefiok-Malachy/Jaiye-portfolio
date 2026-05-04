@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;500;700&family=JetBrains+Mono:wght@400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white font-sans antialiased selection:bg-amber-500/30 selection:text-white;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 md:px-12 py-24;
+  }
+
+  .micro-label {
+    @apply font-sans text-[10px] md:text-[11px] font-medium tracking-[0.2em] uppercase text-zinc-500 mb-4 block;
+  }
+
+  .display-heading {
+    @apply font-display text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight leading-[1.1];
+  }
+
+  .glass-card {
+    @apply bg-zinc-900/40 backdrop-blur-md border border-zinc-800/50 rounded-2xl p-8 transition-all duration-300 hover:border-zinc-700/50 hover:bg-zinc-900/50;
+  }
+
+  .pill-button {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full bg-amber-500 text-black font-semibold hover:bg-amber-400 transition-colors duration-200 text-sm md:text-base whitespace-nowrap;
+  }
+
+  .outline-pill {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full border border-zinc-700 text-zinc-300 hover:border-zinc-500 hover:text-white transition-all duration-200 text-sm;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
